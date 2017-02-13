@@ -10,7 +10,7 @@
 		C934E9A31E518E1D00F7D113 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C934E9A21E518E1D00F7D113 /* main.m */; };
 		C934E9A61E518E1D00F7D113 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C934E9A51E518E1D00F7D113 /* AppDelegate.m */; };
 		C934E9A91E518E1D00F7D113 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C934E9A81E518E1D00F7D113 /* MasterViewController.m */; };
-		C934E9AC1E518E1D00F7D113 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C934E9AB1E518E1D00F7D113 /* DetailViewController.m */; };
+		C934E9AC1E518E1D00F7D113 /* JLPAVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C934E9AB1E518E1D00F7D113 /* JLPAVCViewController.m */; };
 		C934E9AF1E518E1D00F7D113 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C934E9AD1E518E1D00F7D113 /* Main.storyboard */; };
 		C934E9B11E518E1D00F7D113 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C934E9B01E518E1D00F7D113 /* Assets.xcassets */; };
 		C934E9B41E518E1D00F7D113 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C934E9B21E518E1D00F7D113 /* LaunchScreen.storyboard */; };
@@ -23,8 +23,8 @@
 		C934E9A51E518E1D00F7D113 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C934E9A71E518E1D00F7D113 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		C934E9A81E518E1D00F7D113 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		C934E9AA1E518E1D00F7D113 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		C934E9AB1E518E1D00F7D113 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		C934E9AA1E518E1D00F7D113 /* JLPAVCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLPAVCViewController.h; sourceTree = "<group>"; };
+		C934E9AB1E518E1D00F7D113 /* JLPAVCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLPAVCViewController.m; sourceTree = "<group>"; };
 		C934E9AE1E518E1D00F7D113 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C934E9B01E518E1D00F7D113 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C934E9B31E518E1D00F7D113 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,8 +65,8 @@
 				C934E9A51E518E1D00F7D113 /* AppDelegate.m */,
 				C934E9A71E518E1D00F7D113 /* MasterViewController.h */,
 				C934E9A81E518E1D00F7D113 /* MasterViewController.m */,
-				C934E9AA1E518E1D00F7D113 /* DetailViewController.h */,
-				C934E9AB1E518E1D00F7D113 /* DetailViewController.m */,
+				C934E9AA1E518E1D00F7D113 /* JLPAVCViewController.h */,
+				C934E9AB1E518E1D00F7D113 /* JLPAVCViewController.m */,
 				C934E9AD1E518E1D00F7D113 /* Main.storyboard */,
 				C934E9B01E518E1D00F7D113 /* Assets.xcassets */,
 				C934E9B21E518E1D00F7D113 /* LaunchScreen.storyboard */,
@@ -158,7 +158,7 @@
 				C934E9A61E518E1D00F7D113 /* AppDelegate.m in Sources */,
 				C934E9A91E518E1D00F7D113 /* MasterViewController.m in Sources */,
 				C934E9A31E518E1D00F7D113 /* main.m in Sources */,
-				C934E9AC1E518E1D00F7D113 /* DetailViewController.m in Sources */,
+				C934E9AC1E518E1D00F7D113 /* JLPAVCViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

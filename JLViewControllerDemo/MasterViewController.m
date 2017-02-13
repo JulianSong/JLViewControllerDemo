@@ -7,22 +7,26 @@
 //
 
 #import "MasterViewController.h"
-#import "DetailViewController.h"
+#import "JLPAVCViewController.h"
 
 @interface MasterViewController ()
 
 @property NSMutableArray *objects;
+@property NSDictionary *viewControllers;
 @end
 
 @implementation MasterViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
+    self.view.layer.cornerRadius = 4;
+    self.view.layer.shadowOpacity = 0.5;
+    self.objects = [[NSMutableArray alloc] init];
+    [self.objects addObject:@"Presenting a View Controller"];
+    self.viewControllers = @{@"Presenting a View Controller":@"JLPAVCViewController",
+                             };
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
@@ -36,30 +40,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-
-- (void)insertNewObject:(id)sender {
-    if (!self.objects) {
-        self.objects = [[NSMutableArray alloc] init];
-    }
-    [self.objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
-
-
-#pragma mark - Segues
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = self.objects[indexPath.row];
-        DetailViewController *controller = (DetailViewController *)[[segue destinationViewController] topViewController];
-        [controller setDetailItem:object];
-        controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-        controller.navigationItem.leftItemsSupplementBackButton = YES;
-    }
 }
 
 
@@ -77,7 +57,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
+    
     NSDate *object = self.objects[indexPath.row];
     cell.textLabel.text = [object description];
     return cell;
@@ -99,5 +79,22 @@
     }
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *key = self.objects[indexPath.row];
+    NSString *clsName = [self.viewControllers objectForKey:key];
+    Class class = NSClassFromString(clsName);
+    UIViewController *vc = [[class alloc] init];
+    [vc setTitle:key];
+    
+    if (self.splitViewController.collapsed) {
+        [self.navigationController pushViewController:vc animated:YES];
+    }else{
+        UINavigationController *nav = self.splitViewController.viewControllers.lastObject;
+        [nav setViewControllers:@[vc]];
+        [self.splitViewController showDetailViewController:nav sender:self];
+        vc.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+        vc.navigationItem.leftItemsSupplementBackButton = YES;
+    }
+}
 @end
